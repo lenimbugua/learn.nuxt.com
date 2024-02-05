@@ -1,21 +1,24 @@
 <script setup lang="ts">
-import "@unocss/reset/tailwind.css";
-const { x, y } = useMouse();
+import '@unocss/reset/tailwind.css'
 
-const colorMode = useColorMode();
+const { x, y } = useMouse()
 
-const toggleColorMode = () => {
-  colorMode.value = colorMode.value === "light" ? "dark" : "light";
-  return;
-};
+const colorMode = useColorMode()
 
-console.log(colorMode.value);
+function toggleColorMode() {
+  colorMode.value = colorMode.value === 'light'
+    ? 'dark'
+    : 'light'
+}
 </script>
+
 <template>
   <div class="text-red">
     <h1>Hello World {{ x }} {{ y }}</h1>
   </div>
-  <button @click="toggleColorMode">{{ colorMode.value }}</button>
+  <button @click="toggleColorMode">
+    {{ colorMode.value }}
+  </button>
 </template>
 
 <style>
