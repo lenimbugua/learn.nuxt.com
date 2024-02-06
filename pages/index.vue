@@ -13,12 +13,19 @@ function toggleColorMode() {
 </script>
 
 <template>
-  <div class="text-red">
-    <h1>Hello World {{ x }} {{ y }}</h1>
+  <div class="grid grid-cols-[1fr_2fr] h-full ">
+    <div class="border-r border-base p4">
+      <div class="text-red">
+        <h1>Hello World {{ x }} {{ y }}</h1>
+      </div>
+      <button @click="toggleColorMode">
+        {{ colorMode.value }}
+      </button>
+    </div>
+    <div class="p4">
+      <ThePlayground />
+    </div>
   </div>
-  <button @click="toggleColorMode">
-    {{ colorMode.value }}
-  </button>
 </template>
 
 <style>
